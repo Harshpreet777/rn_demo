@@ -1,118 +1,86 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Pressable, ScrollView, Text, View} from 'react-native';
+import {Counter} from './lib/demo/counter';
+import {StyleScreen} from './lib/demo/styles_screem';
+import {TextFormField} from './lib/demo/textformfield';
+import {Login} from './lib/demo/login_screen';
+import {ImageDemo} from './lib/demo/image_demo';
+import {ModalDemo} from './lib/demo/modal_demo';
+import {StatusBarDemo} from './lib/demo/status_bar_demo';
+import {AlertDemo} from './lib/demo/alert_demo';
+import {RefreshDemo} from './lib/demo/refresh_control_demo';
+import {WelcomeScreen} from './lib/form/welcome_screen';
+import {LoginScreen} from './lib/form/login_screen';
+import {RegistrationScreen} from './lib/form/registration_screen';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {ClassLifeCycleDemo} from './lib/demo/lifecycle_class_demo';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {FunctionLifeCycleDemo} from './lib/demo/lifecycler_function_demo';
+import {FlatListDemo} from './lib/demo/flatlist_demo';
+import {StackScreenDemo} from './lib/demo/navigation_demo/stack_screen';
+import {TabScreen} from './lib/demo/navigation_demo/tab_navigate';
+import {DrawerScreenDemo} from './lib/demo/navigation_demo/drawer_screen';
+import {ChatNavigation} from './lib/demo/navigation_demo/chat_navigation';
+import {ScrollViewDemo} from './lib/demo/scrollview_demo/scrollview_demo';
+import {HocDemo} from './lib/demo/hoc_demo';
+import { UseMemoDemo } from './lib/demo/use_memo_demo';
+import { UseCallBackDemo } from './lib/demo/use_callback_demo';
+import { GetApiDemo } from './lib/demo/api_demo/crud_demo';
+import { EditDataDemo } from './lib/demo/api_demo/edit_data';
+import { ApiNavigation } from './lib/demo/api_demo/api_navigation';
+import { ChatScreenDemo } from './lib/demo/chat_demo/chat_screen';
+import { FlexDemo } from './lib/demo/flex_demo/flex_demo';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
+const Stack = createNativeStackNavigator();
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <FlexDemo/>
+    // <ApiNavigation/>
+    // <ScrollViewDemo />
+    // <FlatListDemo />
+    // <UseCallBackDemo/>
+    // <HocDemo/>
+    // <NavigationContainer>
+    //   <Stack.Navigator screenOptions={{animation: 'none'}}>
+    //     <Stack.Screen
+    //       name="Home"
+    //       component={StackScreenDemo}
+    //       options={{headerShown: false}}
+    //     />
+    //     <Stack.Screen
+    //       name="Tab"
+    //       component={TabScreen}
+    //       options={{headerShown: false}}
+    //     />
+    //     <Stack.Screen
+    //       name="Drawer"
+    //       component={DrawerScreenDemo}
+    //       options={{headerShown: false}}
+    //     />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
+    // <NavigationContainer>
+    //   <Stack.Navigator>
+    //     <Stack.Screen
+    //       name="Home"
+    //       component={WelcomeScreen}
+    //       options={{headerShown: false}}
+    //     />
+    //     <Stack.Screen
+    //       name="Registration"
+    //       component={RegistrationScreen}
+    //       options={{headerShown: false}}
+    //     />
+    //     <Stack.Screen
+    //       name="Login"
+    //       component={LoginScreen}
+    //       options={{headerShown: false}}
+    //     />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
