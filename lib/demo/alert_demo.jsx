@@ -15,6 +15,21 @@ export const AlertDemo = ({ name = null || ' ' }) => {
                     onPress: () => console.log('ok')
 
                 },
+                {
+                    text: 'Ok',
+                    onPress: () => console.log('ok')
+
+                },
+                {
+                    text: 'Ok',
+                    onPress: () => console.log('ok')
+
+                },
+                {
+                    text: 'Ok',
+                    onPress: () => console.log('ok')
+
+                }
             ])}></Button>
             <Text style={{ color: "white", fontSize: 30 }}>
                 Hello {name}

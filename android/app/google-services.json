@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "871720072976",
+    "project_id": "demorn-3c8c8",
+    "storage_bucket": "demorn-3c8c8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871720072976:android:035170afbb817af0921795",
+        "android_client_info": {
+          "package_name": "com.demorn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATuSgoJTARTVbphfndvgNCfV9O2SG3b2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
